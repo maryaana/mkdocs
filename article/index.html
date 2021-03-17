@@ -228,6 +228,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#create-table" class="md-nav__link">
+    Create table
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commands" class="md-nav__link">
+    Commands
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -379,6 +393,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#create-table" class="md-nav__link">
+    Create table
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commands" class="md-nav__link">
+    Commands
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -421,6 +449,15 @@
 <h2 id="constraints">Constraints</h2>
 <p><strong>Primary key</strong> : <code>ID_article integer PRIMARY KEY</code></p>
 <p><strong>Foreign key</strong> : <code>ID_release_FK integer REFERENCES release (ID_release)</code></p>
+<h2 id="create-table">Create table</h2>
+<pre><code>CREATE TABLE article (
+    ID_article integer PRIMARY KEY, 
+    ID_release_FK integer REFERENCES release (ID_release)
+);
+</code></pre>
+<h2 id="commands">Commands</h2>
+<pre><code>INSERT INTO article VALUES (1, 2), (2, 2), (3, 1);
+</code></pre>
                 
               
               

@@ -273,6 +273,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#create-table" class="md-nav__link">
+    Create table
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commands" class="md-nav__link">
+    Commands
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -379,6 +393,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#create-table" class="md-nav__link">
+    Create table
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commands" class="md-nav__link">
+    Commands
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -451,6 +479,20 @@
 <h2 id="constraints">Constraints</h2>
 <p><strong>Primary key</strong> : <code>ID_newspaper integer PRIMARY KEY</code></p>
 <p><strong>Foreign key</strong> : <code>ID_post_office_FK integer REFERENCES post_office (ID_post_office)</code></p>
+<h2 id="create-table">Create table</h2>
+<pre><code>CREATE TABLE newspaper (
+    ID_newspaper integer PRIMARY KEY,
+    title_newspaper text NOT NULL,
+    cost_newspaper float NOT NULL,
+    publication_index integer,
+    number_office integer,
+    date_of_issue date,
+    ID_post_office_FK integer REFERENCES post_office (ID_post_office)
+);
+</code></pre>
+<h2 id="commands">Commands</h2>
+<pre><code>INSERT INTO newspaper VALUES (1, 'ITMO', 12, 54785, 345, '2021-03-16', 1), (2, 'ITMO2', 45, 5675, 125, '2021-02-11', 2);
+</code></pre>
                 
               
               
