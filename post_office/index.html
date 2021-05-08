@@ -303,6 +303,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#create-table" class="md-nav__link">
+    Create table
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commands" class="md-nav__link">
+    Commands
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -336,6 +350,21 @@
     <li class="md-nav__item">
       <a href="../release/" class="md-nav__link">
         Release
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../requests/" class="md-nav__link">
+        Requests
       </a>
     </li>
   
@@ -375,6 +404,20 @@
         <li class="md-nav__item">
   <a href="#constraints" class="md-nav__link">
     Constraints
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-table" class="md-nav__link">
+    Create table
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commands" class="md-nav__link">
+    Commands
   </a>
   
 </li>
@@ -426,6 +469,16 @@
 </table>
 <h2 id="constraints">Constraints</h2>
 <p><strong>Primary key</strong> : <code>ID_post_office integer PRIMARY KEY</code></p>
+<h2 id="create-table">Create table</h2>
+<pre><code>CREATE TABLE post_office (
+    ID_post_office integer PRIMARY KEY, 
+    number_office integer NOT NULL, 
+    address_office text NOT NULL
+);
+</code></pre>
+<h2 id="commands">Commands</h2>
+<pre><code>INSERT INTO post_office VALUES (1, 3489, 'Nevskij'), (2, 357857, 'Petroga');
+</code></pre>
                 
               
               
