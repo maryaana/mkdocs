@@ -5,7 +5,7 @@
 
 | Name            | Data type     | Not NULL? | Primary key? |
 |:--------------- |:--------------|:----------|:-------------|
-| `id_article`    | `integer`     | `YES`     | `YES`        |
+| `id_article`    | integer     | `YES`     | `YES`        |
 | `id_release_fk` | `integer`     | `NO`      | `NO`         |
 
 
