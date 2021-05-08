@@ -333,20 +333,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#create-table" class="md-nav__link">
-    Create table
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#commands" class="md-nav__link">
-    Commands
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -389,20 +375,6 @@
         <li class="md-nav__item">
   <a href="#constraints" class="md-nav__link">
     Constraints
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#create-table" class="md-nav__link">
-    Create table
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#commands" class="md-nav__link">
-    Commands
   </a>
   
 </li>
@@ -474,19 +446,6 @@
 <p><strong>Primary key</strong> : <code>ID_release integer PRIMARY KEY</code></p>
 <p><strong>Foreign key</strong> : <code>ID_printing_office_FK integer REFERENCES printing_office (ID_printing_office)</code></p>
 <p><strong>Foreign key</strong> : <code>ID_newspaper_FK integer REFERENCES newspaper (ID_newspaper)</code></p>
-<h2 id="create-table">Create table</h2>
-<pre><code>CREATE TABLE release (
-    ID_release integer PRIMARY KEY,
-    date_of_issue_release date,
-    publication_index_release integer,
-    cost_copy float,
-    ID_printing_office_FK integer REFERENCES printing_office (ID_printing_office),
-    ID_newspaper_FK integer REFERENCES newspaper (ID_newspaper)
-); 
-</code></pre>
-<h2 id="commands">Commands</h2>
-<pre><code>INSERT INTO release VALUES (1, '2020-01-01', 2435, 100, 2, 2), (2, '2020-05-01', 24635, 120, 1, 1);
-</code></pre>
                 
               
               
