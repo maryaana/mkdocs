@@ -447,6 +447,642 @@ from newspaper;
 </tbody>
 </table>
 <h2 id="score-2">Score - 2</h2>
+<h1 id="requst-no2">Requst №2</h1>
+<p><code>Вывести длину названий типографий</code></p>
+<h2 id="create-requst_1">Create requst</h2>
+<pre><code>select name_printing_office, length(name_printing_office) 
+from printing_office;
+</code></pre>
+<h2 id="result_1">Result</h2>
+<table>
+<thead>
+<tr>
+<th align="left">name_printing_office</th>
+<th align="left">length</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">qwerty</td>
+<td align="left">6</td>
+</tr>
+<tr>
+<td align="left">wasd</td>
+<td align="left">4</td>
+</tr>
+</tbody>
+</table>
+<h2 id="score-2_1">Score - 2</h2>
+<h1 id="requst-no3">Requst №3</h1>
+<p><code>Вывести информацию о газетах, которые не печатались в почтовых отделениях с id = 2</code></p>
+<h2 id="create-requst_2">Create requst</h2>
+<pre><code>select * from newspaper 
+except select * from newspaper 
+where id_post_office_fk = 2
+order by id_newspaper;
+</code></pre>
+<h2 id="result_2">Result</h2>
+<table>
+<thead>
+<tr>
+<th align="left">id_newspaper</th>
+<th align="left">title_newspaper</th>
+<th align="left">cost_newspaper</th>
+<th align="left">publication_index</th>
+<th align="left">number_office</th>
+<th align="left">date_of_issue</th>
+<th align="left">id_post_office_fk</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">2</td>
+<td align="left">The New York Times</td>
+<td align="left">12</td>
+<td align="left">54785</td>
+<td align="left">345</td>
+<td align="left">2021-03-16</td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left">SpeedInfo</td>
+<td align="left">53</td>
+<td align="left">83892</td>
+<td align="left">145</td>
+<td align="left">2021-09-28</td>
+<td align="left">1</td>
+</tr>
+</tbody>
+</table>
+<h2 id="score-2_2">Score - 2</h2>
+<h1 id="requst-no4">Requst №4</h1>
+<p><code>Вывести id и индексы выпусков, которые печатались в типографии qwerty, но не газеты “Forbes”</code></p>
+<h2 id="create-requst_3">Create requst</h2>
+<pre><code>select id_release, publication_index_release
+from release
+where id_printing_office_fk 
+in (select id_printing_office 
+    from printing_office 
+    where name_printing_office = 'qwerty')
+and id_newspaper_fk 
+not in (select id_newspaper 
+        from newspaper 
+        where title_newspaper = 'Forbes');
+</code></pre>
+<h2 id="result_3">Result</h2>
+<table>
+<thead>
+<tr>
+<th align="left">id_release</th>
+<th align="left">publication_index_release</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">3</td>
+<td align="left">3524</td>
+</tr>
+<tr>
+<td align="left">5</td>
+<td align="left">2234</td>
+</tr>
+</tbody>
+</table>
+<h2 id="score-4">Score - 4</h2>
+<h1 id="requst-no5">Requst №5</h1>
+<p><code>Вывести разницу между самой дорогой и дешевой газетой</code></p>
+<h2 id="create-requst_4">Create requst</h2>
+<pre><code>select (max(cost_newspaper) - min(cost_newspaper)) as difference
+from newspaper;
+</code></pre>
+<h2 id="result_4">Result</h2>
+<table>
+<thead>
+<tr>
+<th align="left">difference</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">41</td>
+</tr>
+</tbody>
+</table>
+<h2 id="score-1">Score - 1</h2>
+<h1 id="requst-no6">Requst №6</h1>
+<p><code>Посчитать наценку дистрибьютера газеты “SpeedInfo”</code></p>
+<h2 id="create-requst_5">Create requst</h2>
+<pre><code>select newspaper.cost_newspaper as old, cost_copy as new, cost_copy - newspaper.cost_newspaper 
+as result from release
+inner join newspaper on
+release.id_newspaper_fk = id_newspaper and title_newspaper = 'SpeedInfo';
+</code></pre>
+<h2 id="result_5">Result</h2>
+<table>
+<thead>
+<tr>
+<th align="left">old</th>
+<th align="left">new</th>
+<th align="left">result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">53</td>
+<td align="left">150</td>
+<td align="left">97</td>
+</tr>
+</tbody>
+</table>
+<h2 id="score-4_1">Score - 4</h2>
+<h1 id="requst-no7">Requst №7</h1>
+<p><code>Вывести индексы выпусков, которые были реализованы в 2021 году</code></p>
+<h2 id="create-requst_6">Create requst</h2>
+<pre><code>select id_release, date_of_issue_release, publication_index_release 
+from release 
+where (select extract(year from date_of_issue_release)) = '2021';
+</code></pre>
+<h2 id="result_6">Result</h2>
+<table>
+<thead>
+<tr>
+<th align="left">id_release</th>
+<th align="left">date_of_issue_release</th>
+<th align="left">publication_index_release</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">3</td>
+<td align="left">2021-09-06</td>
+<td align="left">3524</td>
+</tr>
+<tr>
+<td align="left">4</td>
+<td align="left">2021-09-28</td>
+<td align="left">12234</td>
+</tr>
+<tr>
+<td align="left">5</td>
+<td align="left">2021-07-28</td>
+<td align="left">2234</td>
+</tr>
+</tbody>
+</table>
+<h2 id="score-2_3">Score - 2</h2>
+<h1 id="requst-no8">Requst №8</h1>
+<p><code>Вывести дату релизов и стоимость экземпляра газеты “Forbes”</code></p>
+<h2 id="create-requst_7">Create requst</h2>
+<pre><code>select date_of_issue_release, cost_copy
+from release 
+where id_newspaper_fk = any (select id_newspaper 
+                     from newspaper 
+                 where title_newspaper = 'Forbes');
+</code></pre>
+<h2 id="result_7">Result</h2>
+<table>
+<thead>
+<tr>
+<th align="left">date_of_issue_release</th>
+<th align="left">cost_copy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">2020-05-01</td>
+<td align="left">120</td>
+</tr>
+<tr>
+<td align="left">2021-09-28</td>
+<td align="left">180</td>
+</tr>
+</tbody>
+</table>
+<h2 id="score-2_4">Score - 2</h2>
+<h1 id="requst-no9">Requst №9</h1>
+<p><code>Вывести идентификатор распределения газет, которые выпустили тираж газет &gt; 120 000</code></p>
+<h2 id="create-requst_8">Create requst</h2>
+<pre><code>select id_newspaper_distribution, number_of_copies 
+from newspaper_distribution 
+group by id_newspaper_distribution 
+having number_of_copies &gt; 120000
+order by id_newspaper_distribution;
+</code></pre>
+<h2 id="result_8">Result</h2>
+<table>
+<thead>
+<tr>
+<th align="left">id_newspaper_distribution</th>
+<th align="left">number_of_copies</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">2</td>
+<td align="left">400000</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left">500000</td>
+</tr>
+<tr>
+<td align="left">5</td>
+<td align="left">180000</td>
+</tr>
+</tbody>
+</table>
+<h2 id="score-2_5">Score - 2</h2>
+<h1 id="requst-no10">Requst №10</h1>
+<p><code>Вывести индекс распределения газет с самой высокой стоимостью экземпляра</code></p>
+<h2 id="create-requst_9">Create requst</h2>
+<pre><code>select publication_index_release, cost_copy 
+from release c1
+where not exists (select * from release c2 
+          where c2.cost_copy &gt; c1.cost_copy);
+</code></pre>
+<h2 id="result_9">Result</h2>
+<table>
+<thead>
+<tr>
+<th align="left">publication_index_release</th>
+<th align="left">cost_copy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">3524</td>
+<td align="left">200</td>
+</tr>
+</tbody>
+</table>
+<h2 id="score-2_6">Score - 2</h2>
+<h1 id="requst-no11">Requst №11</h1>
+<p><code>Вывести информацию о типографиях и распределении газет</code></p>
+<h2 id="create-requst_10">Create requst</h2>
+<pre><code>select * from newspaper_distribution 
+left join printing_office 
+on id_printing_office = newspaper_distribution.id_printing_office_fk;
+</code></pre>
+<h2 id="result_10">Result</h2>
+<table>
+<thead>
+<tr>
+<th align="left">id_newspaper_distribution</th>
+<th align="left">number_of_copies</th>
+<th align="left">cost_release</th>
+<th align="left">id_printing_office_fk</th>
+<th align="left">id_post_office_fk</th>
+<th align="left">id_printing_office</th>
+<th align="left">name_printing_office</th>
+<th align="left">address_printing_office</th>
+<th align="left">count</th>
+<th align="left">schedule_printing_office</th>
+<th align="left">id_newspaper_fk</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">100000</td>
+<td align="left">150</td>
+<td align="left">1</td>
+<td align="left">2</td>
+<td align="left">1</td>
+<td align="left">qwerty</td>
+<td align="left">Gorkovskaya, 15</td>
+<td align="left">12000</td>
+<td align="left">8-00 22-00</td>
+<td align="left">2</td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="left">400000</td>
+<td align="left">100</td>
+<td align="left">2</td>
+<td align="left">2</td>
+<td align="left">2</td>
+<td align="left">wasd</td>
+<td align="left">Gorkovskaya, 244a</td>
+<td align="left">2400</td>
+<td align="left">10-00 20-00</td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left">500000</td>
+<td align="left">120</td>
+<td align="left">2</td>
+<td align="left">1</td>
+<td align="left">2</td>
+<td align="left">wasd</td>
+<td align="left">Gorkovskaya, 244a</td>
+<td align="left">2400</td>
+<td align="left">10-00 20-00</td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left">4</td>
+<td align="left">120000</td>
+<td align="left">140</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">qwerty</td>
+<td align="left">Gorkovskaya, 15</td>
+<td align="left">12000</td>
+<td align="left">8-00 22-00</td>
+<td align="left">2</td>
+</tr>
+<tr>
+<td align="left">5</td>
+<td align="left">180000</td>
+<td align="left">147</td>
+<td align="left">2</td>
+<td align="left">1</td>
+<td align="left">2</td>
+<td align="left">wasd</td>
+<td align="left">Gorkovskaya, 244a</td>
+<td align="left">2400</td>
+<td align="left">10-00 20-00</td>
+<td align="left">1</td>
+</tr>
+</tbody>
+</table>
+<h2 id="score-2_7">Score - 2</h2>
+<h1 id="requst-no11_1">Requst №11</h1>
+<p><code>Вывести информацию о типографиях и распределении газет</code></p>
+<h2 id="create-requst_11">Create requst</h2>
+<pre><code>select * from newspaper_distribution 
+left join printing_office 
+on id_printing_office = newspaper_distribution.id_printing_office_fk;
+</code></pre>
+<h2 id="result_11">Result</h2>
+<table>
+<thead>
+<tr>
+<th align="left">id_newspaper_distribution</th>
+<th align="left">number_of_copies</th>
+<th align="left">cost_release</th>
+<th align="left">id_printing_office_fk</th>
+<th align="left">id_post_office_fk</th>
+<th align="left">id_printing_office</th>
+<th align="left">name_printing_office</th>
+<th align="left">address_printing_office</th>
+<th align="left">count</th>
+<th align="left">schedule_printing_office</th>
+<th align="left">id_newspaper_fk</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">100000</td>
+<td align="left">150</td>
+<td align="left">1</td>
+<td align="left">2</td>
+<td align="left">1</td>
+<td align="left">qwerty</td>
+<td align="left">Gorkovskaya, 15</td>
+<td align="left">12000</td>
+<td align="left">8-00 22-00</td>
+<td align="left">2</td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="left">400000</td>
+<td align="left">100</td>
+<td align="left">2</td>
+<td align="left">2</td>
+<td align="left">2</td>
+<td align="left">wasd</td>
+<td align="left">Gorkovskaya, 244a</td>
+<td align="left">2400</td>
+<td align="left">10-00 20-00</td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left">500000</td>
+<td align="left">120</td>
+<td align="left">2</td>
+<td align="left">1</td>
+<td align="left">2</td>
+<td align="left">wasd</td>
+<td align="left">Gorkovskaya, 244a</td>
+<td align="left">2400</td>
+<td align="left">10-00 20-00</td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left">4</td>
+<td align="left">120000</td>
+<td align="left">140</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">qwerty</td>
+<td align="left">Gorkovskaya, 15</td>
+<td align="left">12000</td>
+<td align="left">8-00 22-00</td>
+<td align="left">2</td>
+</tr>
+<tr>
+<td align="left">5</td>
+<td align="left">180000</td>
+<td align="left">147</td>
+<td align="left">2</td>
+<td align="left">1</td>
+<td align="left">2</td>
+<td align="left">wasd</td>
+<td align="left">Gorkovskaya, 244a</td>
+<td align="left">2400</td>
+<td align="left">10-00 20-00</td>
+<td align="left">1</td>
+</tr>
+</tbody>
+</table>
+<h2 id="score-2_8">Score - 2</h2>
+<h1 id="requst-no11_2">Requst №11</h1>
+<p><code>Вывести информацию о типографиях и распределении газет</code></p>
+<h2 id="create-requst_12">Create requst</h2>
+<pre><code>select * from newspaper_distribution 
+left join printing_office 
+on id_printing_office = newspaper_distribution.id_printing_office_fk;
+</code></pre>
+<h2 id="result_12">Result</h2>
+<table>
+<thead>
+<tr>
+<th align="left">id_newspaper_distribution</th>
+<th align="left">number_of_copies</th>
+<th align="left">cost_release</th>
+<th align="left">id_printing_office_fk</th>
+<th align="left">id_post_office_fk</th>
+<th align="left">id_printing_office</th>
+<th align="left">name_printing_office</th>
+<th align="left">address_printing_office</th>
+<th align="left">count</th>
+<th align="left">schedule_printing_office</th>
+<th align="left">id_newspaper_fk</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">100000</td>
+<td align="left">150</td>
+<td align="left">1</td>
+<td align="left">2</td>
+<td align="left">1</td>
+<td align="left">qwerty</td>
+<td align="left">Gorkovskaya, 15</td>
+<td align="left">12000</td>
+<td align="left">8-00 22-00</td>
+<td align="left">2</td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="left">400000</td>
+<td align="left">100</td>
+<td align="left">2</td>
+<td align="left">2</td>
+<td align="left">2</td>
+<td align="left">wasd</td>
+<td align="left">Gorkovskaya, 244a</td>
+<td align="left">2400</td>
+<td align="left">10-00 20-00</td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left">500000</td>
+<td align="left">120</td>
+<td align="left">2</td>
+<td align="left">1</td>
+<td align="left">2</td>
+<td align="left">wasd</td>
+<td align="left">Gorkovskaya, 244a</td>
+<td align="left">2400</td>
+<td align="left">10-00 20-00</td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left">4</td>
+<td align="left">120000</td>
+<td align="left">140</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">qwerty</td>
+<td align="left">Gorkovskaya, 15</td>
+<td align="left">12000</td>
+<td align="left">8-00 22-00</td>
+<td align="left">2</td>
+</tr>
+<tr>
+<td align="left">5</td>
+<td align="left">180000</td>
+<td align="left">147</td>
+<td align="left">2</td>
+<td align="left">1</td>
+<td align="left">2</td>
+<td align="left">wasd</td>
+<td align="left">Gorkovskaya, 244a</td>
+<td align="left">2400</td>
+<td align="left">10-00 20-00</td>
+<td align="left">1</td>
+</tr>
+</tbody>
+</table>
+<h2 id="score-2_9">Score - 2</h2>
+<h1 id="requst-no12">Requst №12</h1>
+<p><code>Вывести основную информацию о напечатанных и реализованных газетах</code></p>
+<h2 id="create-requst_13">Create requst</h2>
+<pre><code>select newspaper.title_newspaper, release.date_of_issue_release, release.cost_copy, printing_office.name_printing_office
+from newspaper 
+join printing_office 
+on newspaper.id_newspaper = printing_office.id_newspaper_fk
+join release 
+on printing_office.id_printing_office = release.id_printing_office_fk
+order by newspaper;
+</code></pre>
+<h2 id="result_13">Result</h2>
+<table>
+<thead>
+<tr>
+<th align="left">title_newspaper</th>
+<th align="left">date_of_issue_release</th>
+<th align="left">cost_copy</th>
+<th align="left">name_printing_office</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Forbes</td>
+<td align="left">2020-01-01</td>
+<td align="left">100</td>
+<td align="left">wasd</td>
+</tr>
+<tr>
+<td align="left">The New York Times</td>
+<td align="left">2020-05-01</td>
+<td align="left">120</td>
+<td align="left">qwerty</td>
+</tr>
+<tr>
+<td align="left">The New York Times</td>
+<td align="left">2021-09-06</td>
+<td align="left">200</td>
+<td align="left">qwerty</td>
+</tr>
+<tr>
+<td align="left">The New York Times</td>
+<td align="left">2021-09-28</td>
+<td align="left">180</td>
+<td align="left">qwerty</td>
+</tr>
+<tr>
+<td align="left">The New York Times</td>
+<td align="left">2021-07-28</td>
+<td align="left">150</td>
+<td align="left">qwerty</td>
+</tr>
+</tbody>
+</table>
+<h2 id="score-2_10">Score - 2</h2>
+<h1 id="requst-no13">Requst №13</h1>
+<p><code>Вывести информацию о газете со стоимостью 12 и датой выпуска 2021-03-16</code></p>
+<h2 id="create-requst_14">Create requst</h2>
+<pre><code>select * from newspaper 
+where cost_newspaper = 12 and date_of_issue = '2021-03-16';
+</code></pre>
+<h2 id="result_14">Result</h2>
+<table>
+<thead>
+<tr>
+<th align="left">id_newspaper</th>
+<th align="left">title_newspaper</th>
+<th align="left">cost_newspaper</th>
+<th align="left">publication_index</th>
+<th align="left">number_office</th>
+<th align="left">date_of_issue</th>
+<th align="left">id_post_office_fk</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">2</td>
+<td align="left">The New York Times</td>
+<td align="left">12</td>
+<td align="left">54785</td>
+<td align="left">345</td>
+<td align="left">2021-03-16</td>
+<td align="left">1</td>
+</tr>
+</tbody>
+</table>
+<h2 id="score-1_1">Score - 1</h2>
                 
               
               
