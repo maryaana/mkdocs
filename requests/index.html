@@ -810,195 +810,9 @@ on id_printing_office = newspaper_distribution.id_printing_office_fk;
 </tbody>
 </table>
 <h2 id="score-2_7">Score - 2</h2>
-<h1 id="requst-no11_1">Requst №11</h1>
-<p><code>Вывести информацию о типографиях и распределении газет</code></p>
-<h2 id="create-requst_11">Create requst</h2>
-<pre><code>select * from newspaper_distribution 
-left join printing_office 
-on id_printing_office = newspaper_distribution.id_printing_office_fk;
-</code></pre>
-<h2 id="result_11">Result</h2>
-<table>
-<thead>
-<tr>
-<th align="left">id_newspaper_distribution</th>
-<th align="left">number_of_copies</th>
-<th align="left">cost_release</th>
-<th align="left">id_printing_office_fk</th>
-<th align="left">id_post_office_fk</th>
-<th align="left">id_printing_office</th>
-<th align="left">name_printing_office</th>
-<th align="left">address_printing_office</th>
-<th align="left">count</th>
-<th align="left">schedule_printing_office</th>
-<th align="left">id_newspaper_fk</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">1</td>
-<td align="left">100000</td>
-<td align="left">150</td>
-<td align="left">1</td>
-<td align="left">2</td>
-<td align="left">1</td>
-<td align="left">qwerty</td>
-<td align="left">Gorkovskaya, 15</td>
-<td align="left">12000</td>
-<td align="left">8-00 22-00</td>
-<td align="left">2</td>
-</tr>
-<tr>
-<td align="left">2</td>
-<td align="left">400000</td>
-<td align="left">100</td>
-<td align="left">2</td>
-<td align="left">2</td>
-<td align="left">2</td>
-<td align="left">wasd</td>
-<td align="left">Gorkovskaya, 244a</td>
-<td align="left">2400</td>
-<td align="left">10-00 20-00</td>
-<td align="left">1</td>
-</tr>
-<tr>
-<td align="left">3</td>
-<td align="left">500000</td>
-<td align="left">120</td>
-<td align="left">2</td>
-<td align="left">1</td>
-<td align="left">2</td>
-<td align="left">wasd</td>
-<td align="left">Gorkovskaya, 244a</td>
-<td align="left">2400</td>
-<td align="left">10-00 20-00</td>
-<td align="left">1</td>
-</tr>
-<tr>
-<td align="left">4</td>
-<td align="left">120000</td>
-<td align="left">140</td>
-<td align="left">1</td>
-<td align="left">1</td>
-<td align="left">1</td>
-<td align="left">qwerty</td>
-<td align="left">Gorkovskaya, 15</td>
-<td align="left">12000</td>
-<td align="left">8-00 22-00</td>
-<td align="left">2</td>
-</tr>
-<tr>
-<td align="left">5</td>
-<td align="left">180000</td>
-<td align="left">147</td>
-<td align="left">2</td>
-<td align="left">1</td>
-<td align="left">2</td>
-<td align="left">wasd</td>
-<td align="left">Gorkovskaya, 244a</td>
-<td align="left">2400</td>
-<td align="left">10-00 20-00</td>
-<td align="left">1</td>
-</tr>
-</tbody>
-</table>
-<h2 id="score-2_8">Score - 2</h2>
-<h1 id="requst-no11_2">Requst №11</h1>
-<p><code>Вывести информацию о типографиях и распределении газет</code></p>
-<h2 id="create-requst_12">Create requst</h2>
-<pre><code>select * from newspaper_distribution 
-left join printing_office 
-on id_printing_office = newspaper_distribution.id_printing_office_fk;
-</code></pre>
-<h2 id="result_12">Result</h2>
-<table>
-<thead>
-<tr>
-<th align="left">id_newspaper_distribution</th>
-<th align="left">number_of_copies</th>
-<th align="left">cost_release</th>
-<th align="left">id_printing_office_fk</th>
-<th align="left">id_post_office_fk</th>
-<th align="left">id_printing_office</th>
-<th align="left">name_printing_office</th>
-<th align="left">address_printing_office</th>
-<th align="left">count</th>
-<th align="left">schedule_printing_office</th>
-<th align="left">id_newspaper_fk</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">1</td>
-<td align="left">100000</td>
-<td align="left">150</td>
-<td align="left">1</td>
-<td align="left">2</td>
-<td align="left">1</td>
-<td align="left">qwerty</td>
-<td align="left">Gorkovskaya, 15</td>
-<td align="left">12000</td>
-<td align="left">8-00 22-00</td>
-<td align="left">2</td>
-</tr>
-<tr>
-<td align="left">2</td>
-<td align="left">400000</td>
-<td align="left">100</td>
-<td align="left">2</td>
-<td align="left">2</td>
-<td align="left">2</td>
-<td align="left">wasd</td>
-<td align="left">Gorkovskaya, 244a</td>
-<td align="left">2400</td>
-<td align="left">10-00 20-00</td>
-<td align="left">1</td>
-</tr>
-<tr>
-<td align="left">3</td>
-<td align="left">500000</td>
-<td align="left">120</td>
-<td align="left">2</td>
-<td align="left">1</td>
-<td align="left">2</td>
-<td align="left">wasd</td>
-<td align="left">Gorkovskaya, 244a</td>
-<td align="left">2400</td>
-<td align="left">10-00 20-00</td>
-<td align="left">1</td>
-</tr>
-<tr>
-<td align="left">4</td>
-<td align="left">120000</td>
-<td align="left">140</td>
-<td align="left">1</td>
-<td align="left">1</td>
-<td align="left">1</td>
-<td align="left">qwerty</td>
-<td align="left">Gorkovskaya, 15</td>
-<td align="left">12000</td>
-<td align="left">8-00 22-00</td>
-<td align="left">2</td>
-</tr>
-<tr>
-<td align="left">5</td>
-<td align="left">180000</td>
-<td align="left">147</td>
-<td align="left">2</td>
-<td align="left">1</td>
-<td align="left">2</td>
-<td align="left">wasd</td>
-<td align="left">Gorkovskaya, 244a</td>
-<td align="left">2400</td>
-<td align="left">10-00 20-00</td>
-<td align="left">1</td>
-</tr>
-</tbody>
-</table>
-<h2 id="score-2_9">Score - 2</h2>
 <h1 id="requst-no12">Requst №12</h1>
 <p><code>Вывести основную информацию о напечатанных и реализованных газетах</code></p>
-<h2 id="create-requst_13">Create requst</h2>
+<h2 id="create-requst_11">Create requst</h2>
 <pre><code>select newspaper.title_newspaper, release.date_of_issue_release, release.cost_copy, printing_office.name_printing_office
 from newspaper 
 join printing_office 
@@ -1007,7 +821,7 @@ join release
 on printing_office.id_printing_office = release.id_printing_office_fk
 order by newspaper;
 </code></pre>
-<h2 id="result_13">Result</h2>
+<h2 id="result_11">Result</h2>
 <table>
 <thead>
 <tr>
@@ -1050,14 +864,14 @@ order by newspaper;
 </tr>
 </tbody>
 </table>
-<h2 id="score-2_10">Score - 2</h2>
+<h2 id="score-2_8">Score - 2</h2>
 <h1 id="requst-no13">Requst №13</h1>
 <p><code>Вывести информацию о газете со стоимостью 12 и датой выпуска 2021-03-16</code></p>
-<h2 id="create-requst_14">Create requst</h2>
+<h2 id="create-requst_12">Create requst</h2>
 <pre><code>select * from newspaper 
 where cost_newspaper = 12 and date_of_issue = '2021-03-16';
 </code></pre>
-<h2 id="result_14">Result</h2>
+<h2 id="result_12">Result</h2>
 <table>
 <thead>
 <tr>
@@ -1083,7 +897,28 @@ where cost_newspaper = 12 and date_of_issue = '2021-03-16';
 </tbody>
 </table>
 <h2 id="score-1_1">Score - 1</h2>
-<h1 id="total-32">Total - 32</h1>
+<h1 id="requst-no14">Requst №14</h1>
+<p><code>Вывести информацию о редакции, в которой фамилия редактора начинается на букву P</code></p>
+<h2 id="create-requst_13">Create requst</h2>
+<pre><code>select * from editorial_office where name LIKE 'P%';
+</code></pre>
+<h2 id="result_13">Result</h2>
+<table>
+<thead>
+<tr>
+<th align="left">id_editorial_office</th>
+<th align="left">name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">2</td>
+<td align="left">Petrova A.M.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="score-1_2">Score - 1</h2>
+<h1 id="total-30">Total - 30</h1>
                 
               
               
