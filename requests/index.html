@@ -57,6 +57,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#requst-no1" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -304,10 +309,55 @@
       
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Requests
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         Requests
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#create-requst" class="md-nav__link">
+    Create requst
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#result" class="md-nav__link">
+    Result
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#score-2" class="md-nav__link">
+    Score - 2
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -320,15 +370,83 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#create-requst" class="md-nav__link">
+    Create requst
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#result" class="md-nav__link">
+    Result
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#score-2" class="md-nav__link">
+    Score - 2
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
               
                 
                 
-                  <h1>Requests</h1>
-                
-                
+                <h1 id="requst-no1">Requst №1</h1>
+<p><code>Вывести информацию о названии газеты и её стоимости</code></p>
+<h2 id="create-requst">Create requst</h2>
+<pre><code>select concat (title_newspaper, ', ',  cost_newspaper, '₽') 
+from newspaper;
+</code></pre>
+<h2 id="result">Result</h2>
+<table>
+<thead>
+<tr>
+<th align="left">concat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>SpeedInfo, 53₽</code></td>
+</tr>
+<tr>
+<td align="left"><code>The New York Times, 12₽</code></td>
+</tr>
+<tr>
+<td align="left"><code>Forbes, 45₽</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="score-2">Score - 2</h2>
                 
               
               
