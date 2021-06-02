@@ -567,6 +567,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#request-no8" class="md-nav__link">
+    Request №8
+  </a>
+  
+    <nav class="md-nav" aria-label="Request №8">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create_7" class="md-nav__link">
+    Create
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#result_7" class="md-nav__link">
+    Result
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -802,6 +829,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#request-no8" class="md-nav__link">
+    Request №8
+  </a>
+  
+    <nav class="md-nav" aria-label="Request №8">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create_7" class="md-nav__link">
+    Create
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#result_7" class="md-nav__link">
+    Result
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -891,6 +945,20 @@ WriteResult({ &quot;nInserted&quot; : 1 })
 </code></pre>
 <h3 id="result_6">Result</h3>
 <p><img alt="17" src="../17.JPG" /></p>
+<h2 id="request-no8">Request №8</h2>
+<p><code>Рассчитать итоговую стоимость тиража для каждой типографии</code></p>
+<h3 id="create_7">Create</h3>
+<pre><code>&gt; var map = function() { 
+    emit(this.typography.name, [this.copies, this.cost]); 
+  }
+&gt; var reduce = function(key, val) { 
+    return val[0][0]*val[0][1]; 
+  };
+&gt; db.disribution.mapReduce(map, reduce, 'sum')
+&gt; db.sum.find()
+</code></pre>
+<h3 id="result_7">Result</h3>
+<p><img alt="18" src="../18.JPG" /></p>
                 
               
               
