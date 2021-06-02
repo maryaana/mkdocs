@@ -14,7 +14,7 @@
     
     
       
-        <title>PHP - Newspapers</title>
+        <title>MongoDB - Newspapers</title>
       
     
     
@@ -58,7 +58,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#php-interfaces" class="md-skip">
+        <a href="#mongodb" class="md-skip">
           Skip to content
         </a>
       
@@ -88,7 +88,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              PHP
+              MongoDB
             
           </span>
         </div>
@@ -317,6 +317,21 @@
 
   
   
+  
+    <li class="md-nav__item">
+      <a href="../php/" class="md-nav__link">
+        PHP
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
     
   
   
@@ -328,12 +343,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          PHP
+          MongoDB
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        PHP
+        MongoDB
       </a>
       
         
@@ -350,23 +365,37 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    1. Вывод таблиц
-  </a>
-  
-    <nav class="md-nav" aria-label="1. Вывод таблиц">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    Главная страница
+    Модель
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    Страница таблицы
+    Создание и заполнение
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#request-no1" class="md-nav__link">
+    Request №1
+  </a>
+  
+    <nav class="md-nav" aria-label="Request №1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create" class="md-nav__link">
+    Create
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#result" class="md-nav__link">
+    Result
   </a>
   
 </li>
@@ -377,16 +406,23 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    2. Удаление данных
+  <a href="#request-no2" class="md-nav__link">
+    Request №2
   </a>
   
-    <nav class="md-nav" aria-label="2. Удаление данных">
+    <nav class="md-nav" aria-label="Request №2">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#id-4" class="md-nav__link">
-    Удалена строка с id = 4
+  <a href="#create_1" class="md-nav__link">
+    Create
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#result_1" class="md-nav__link">
+    Result
   </a>
   
 </li>
@@ -397,16 +433,23 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
-    3. Добавление данных
+  <a href="#request-no3" class="md-nav__link">
+    Request №3
   </a>
   
-    <nav class="md-nav" aria-label="3. Добавление данных">
+    <nav class="md-nav" aria-label="Request №3">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    Страница с формой для вставки данных
+  <a href="#create_2" class="md-nav__link">
+    Create
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#result_2" class="md-nav__link">
+    Result
   </a>
   
 </li>
@@ -417,16 +460,23 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
-    4. Изменение данных
+  <a href="#request-no4" class="md-nav__link">
+    Request №4
   </a>
   
-    <nav class="md-nav" aria-label="4. Изменение данных">
+    <nav class="md-nav" aria-label="Request №4">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    Страница с формой для редактирования данных
+  <a href="#create_3" class="md-nav__link">
+    Create
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#result_3" class="md-nav__link">
+    Result
   </a>
   
 </li>
@@ -437,16 +487,77 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5" class="md-nav__link">
-    5. Запросы
+  <a href="#request-no5" class="md-nav__link">
+    Request №5
   </a>
   
-    <nav class="md-nav" aria-label="5. Запросы">
+    <nav class="md-nav" aria-label="Request №5">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    Вывод пяти запросов
+  <a href="#create_4" class="md-nav__link">
+    Create
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#result_4" class="md-nav__link">
+    Result
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#request-no6" class="md-nav__link">
+    Request №6
+  </a>
+  
+    <nav class="md-nav" aria-label="Request №6">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create_5" class="md-nav__link">
+    Create
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#result_5" class="md-nav__link">
+    Result
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#request-no7" class="md-nav__link">
+    Request №7
+  </a>
+  
+    <nav class="md-nav" aria-label="Request №7">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create_6" class="md-nav__link">
+    Create
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#result_6" class="md-nav__link">
+    Result
   </a>
   
 </li>
@@ -460,21 +571,6 @@
   
 </nav>
       
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../mongo/" class="md-nav__link">
-        MongoDB
-      </a>
     </li>
   
 
@@ -504,23 +600,37 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    1. Вывод таблиц
-  </a>
-  
-    <nav class="md-nav" aria-label="1. Вывод таблиц">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    Главная страница
+    Модель
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    Страница таблицы
+    Создание и заполнение
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#request-no1" class="md-nav__link">
+    Request №1
+  </a>
+  
+    <nav class="md-nav" aria-label="Request №1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create" class="md-nav__link">
+    Create
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#result" class="md-nav__link">
+    Result
   </a>
   
 </li>
@@ -531,16 +641,23 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    2. Удаление данных
+  <a href="#request-no2" class="md-nav__link">
+    Request №2
   </a>
   
-    <nav class="md-nav" aria-label="2. Удаление данных">
+    <nav class="md-nav" aria-label="Request №2">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#id-4" class="md-nav__link">
-    Удалена строка с id = 4
+  <a href="#create_1" class="md-nav__link">
+    Create
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#result_1" class="md-nav__link">
+    Result
   </a>
   
 </li>
@@ -551,16 +668,23 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
-    3. Добавление данных
+  <a href="#request-no3" class="md-nav__link">
+    Request №3
   </a>
   
-    <nav class="md-nav" aria-label="3. Добавление данных">
+    <nav class="md-nav" aria-label="Request №3">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    Страница с формой для вставки данных
+  <a href="#create_2" class="md-nav__link">
+    Create
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#result_2" class="md-nav__link">
+    Result
   </a>
   
 </li>
@@ -571,16 +695,23 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
-    4. Изменение данных
+  <a href="#request-no4" class="md-nav__link">
+    Request №4
   </a>
   
-    <nav class="md-nav" aria-label="4. Изменение данных">
+    <nav class="md-nav" aria-label="Request №4">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    Страница с формой для редактирования данных
+  <a href="#create_3" class="md-nav__link">
+    Create
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#result_3" class="md-nav__link">
+    Result
   </a>
   
 </li>
@@ -591,16 +722,77 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5" class="md-nav__link">
-    5. Запросы
+  <a href="#request-no5" class="md-nav__link">
+    Request №5
   </a>
   
-    <nav class="md-nav" aria-label="5. Запросы">
+    <nav class="md-nav" aria-label="Request №5">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    Вывод пяти запросов
+  <a href="#create_4" class="md-nav__link">
+    Create
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#result_4" class="md-nav__link">
+    Result
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#request-no6" class="md-nav__link">
+    Request №6
+  </a>
+  
+    <nav class="md-nav" aria-label="Request №6">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create_5" class="md-nav__link">
+    Create
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#result_5" class="md-nav__link">
+    Result
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#request-no7" class="md-nav__link">
+    Request №7
+  </a>
+  
+    <nav class="md-nav" aria-label="Request №7">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create_6" class="md-nav__link">
+    Create
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#result_6" class="md-nav__link">
+    Result
   </a>
   
 </li>
@@ -623,26 +815,82 @@
               
                 
                 
-                <h1 id="php-interfaces">PHP-interfaces</h1>
-<h2 id="1">1. Вывод таблиц</h2>
-<p><img alt="2" src="../2.JPG" /></p>
-<h5 id="_1">Главная страница</h5>
-<p><img alt="3" src="../3.JPG" /></p>
-<h5 id="_2">Страница таблицы</h5>
-<h2 id="2">2. Удаление данных</h2>
-<p><img alt="4" src="../4.JPG" /></p>
-<h5 id="id-4">Удалена строка с id = 4</h5>
-<h2 id="3">3. Добавление данных</h2>
-<p><img alt="5" src="../5.JPG" /></p>
-<h5 id="_3">Страница с формой для вставки данных</h5>
-<h2 id="4">4. Изменение данных</h2>
-<p><img alt="6" src="../6.JPG" /></p>
-<h5 id="_4">Страница с формой для редактирования данных</h5>
-<h2 id="5">5. Запросы</h2>
-<p><img alt="7" src="../7.JPG" />
-<img alt="8" src="../8.JPG" />
-<img alt="9" src="../9.JPG" /></p>
-<h5 id="_5">Вывод пяти запросов</h5>
+                <h1 id="mongodb">MongoDB</h1>
+<h2 id="_1">Модель</h2>
+<p><img alt="10" src="../10.JPG" /></p>
+<h2 id="_2">Создание и заполнение</h2>
+<pre><code>&gt; db.createCollection(&quot;release&quot;)
+{ &quot;ok&quot; : 1 }
+&gt; db.createCollection(&quot;release&quot;)
+{ &quot;ok&quot; : 1 }
+&gt; db.createCollection(&quot;distribution&quot;)
+{ &quot;ok&quot; : 1 }
+</code></pre>
+<pre><code>&gt; db.post_office.insert({'id_post_office': 1, 'number': 3489, 'address': 'Nevskij'})
+&gt; db.release.insert({'id_release': 1, 'newspaper': {'id_newspaper': 1, 'title': 'SpeedInfo', 'cost': 15, 'pub_index': 1234, 'date_of_issue': '2020-02-03'}, 'corrections': {'id_corrections': 1, 'content': 'asdfghgnjhn'}, 'date': '2020-03-03', 'publication_index': 54321, 'cost_copy': 19, 'editor': {'id_editor': 1, name: 'Ivanov.I.I.'}})
+WriteResult({ &quot;nInserted&quot; : 1 })
+&gt; db.release.insert({'id_release': 2, 'newspaper': {'id_newspaper': 2, 'title': 'Forbes', 'cost': 25, 'pub_index': 354666, 'date_of_issue': '2021-12-03'}, 'corrections': {'id_corrections': 2, 'content': 'dhfjgjfnvf'}, 'date': '2021-12-23', 'publication_index': 545466, 'cost_copy': 32, 'editor': {'id_editor': 2, name: 'Titova M.O.'}})
+WriteResult({ &quot;nInserted&quot; : 1 })
+&gt; db.release.insert({'id_release': 3, 'newspaper': {'id_newspaper': 3, 'title': 'The New York Times', 'cost': 29, 'pub_index': 6574574, 'date_of_issue': '2020-07-10'}, 'corrections': {'id_corrections': 2, 'content': 'dhfjgjfnvf'}, 'date': '2020-08-23', 'publication_index': 467756, 'cost_copy': 40, 'editor': {'id_editor': 3, name: 'Petrov A.A.'}})
+WriteResult({ &quot;nInserted&quot; : 1 })
+&gt; db.disribution.insert({'id_disribution': 1, 'typography': {'id_typography': 1, 'name': 'qwerty', 'address': 'Gorkovskaya, 15', 'count': 1200, 'schedule': '12-00 20-00'}, 'copies': 12000, 'cost': 50, 'release_id': 1, 'post_office_id': 2})
+WriteResult({ &quot;nInserted&quot; : 1 })
+&gt; db.disribution.insert({'id_disribution': 2, 'typography': {'id_typography': 2, 'name': 'wasd', 'address': 'Pesochnaya, 14a', 'count': 20000, 'schedule': '9-00 22-00'}, 'copies': 1200, 'cost': 60, 'release_id': 2, 'post_office_id': 1})
+WriteResult({ &quot;nInserted&quot; : 1 })
+&gt; db.disribution.insert({'id_disribution': 3, 'typography': {'id_typography': 1, 'name': 'wasd', 'address': 'Pesochnaya, 14a', 'count': 20000, 'schedule': '9-00 22-00'}, 'copies': 3000, 'cost': 40, 'release_id': 3, 'post_office_id': 2})
+WriteResult({ &quot;nInserted&quot; : 1 })
+&gt; db.disribution.insert({'id_disribution': 4, 'typography': {'id_typography': 1, 'name': 'qwerty', 'address': 'Gorkovskaya, 15', 'count': 1200, 'schedule': '12-00 20-00'}, 'copies': 14556, 'cost': 46, 'release_id': 2, 'post_office_id': 1})
+WriteResult({ &quot;nInserted&quot; : 1 })
+</code></pre>
+<h2 id="request-no1">Request №1</h2>
+<p><code>Вывести информацию о газете со стоимостью 29 и датой выпуска 2020-07-10</code></p>
+<h3 id="create">Create</h3>
+<pre><code>db.release.find({'newspaper.cost': 29, 'newspaper.date_of_issue': '2020-07-10'}).pretty()
+</code></pre>
+<h3 id="result">Result</h3>
+<p><img alt="11" src="../11.JPG" /></p>
+<h2 id="request-no2">Request №2</h2>
+<p><code>Вывести информацию о распределении газет</code></p>
+<h3 id="create_1">Create</h3>
+<pre><code>db.disribution.find().pretty()
+</code></pre>
+<h3 id="result_1">Result</h3>
+<p><img alt="12" src="../12.JPG" /></p>
+<h2 id="request-no3">Request №3</h2>
+<p><code>Вывести выпуски, которые были реализованы в 2020 году</code></p>
+<h3 id="create_2">Create</h3>
+<pre><code>db.release.find({'newspaper.date_of_issue': {$regex:'2020'}}).pretty()
+</code></pre>
+<h3 id="result_2">Result</h3>
+<p><img alt="13" src="../13.JPG" /></p>
+<h2 id="request-no4">Request №4</h2>
+<p><code>Вывести информацию о газетах и правках</code></p>
+<h3 id="create_3">Create</h3>
+<pre><code>db.release.aggregate([{ $project: { itemDescription: { $concat: ['$newspaper.title', ', ' ,'$corrections.content']}}}]).pretty()
+</code></pre>
+<h3 id="result_3">Result</h3>
+<p><img alt="14" src="../14.JPG" /></p>
+<h2 id="request-no5">Request №5</h2>
+<p><code>Вывести длину названий типографий</code></p>
+<h3 id="create_4">Create</h3>
+<pre><code>db.disribution.aggregate([{$project: {'typography.name': 1, 'length': { $strLenCP: '$typography.name'}}}]).pretty()
+</code></pre>
+<h3 id="result_4">Result</h3>
+<p><img alt="15" src="../15.JPG" /></p>
+<h2 id="request-no6">Request №6</h2>
+<p><code>Вывести информацию о распределении газет, которые реализовали более 2000 копий</code></p>
+<h3 id="create_5">Create</h3>
+<pre><code>db.disribution.find({'copies': {$gt: 2000}}).pretty()
+</code></pre>
+<h3 id="result_5">Result</h3>
+<p><img alt="16" src="../16.JPG" /></p>
+<h2 id="request-no7">Request №7</h2>
+<p><code>Вывести информацию о распределении газеты с самой высокой стоимостью экземпляра</code></p>
+<h3 id="create_6">Create</h3>
+<pre><code>db.release.find().sort({'newspaper.cost': -1}).limit(1).pretty()
+</code></pre>
+<h3 id="result_6">Result</h3>
+<p><img alt="17" src="../17.JPG" /></p>
                 
               
               
@@ -660,7 +908,7 @@
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../requests/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../php/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -669,25 +917,11 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Requests
+              PHP
             </div>
           </div>
         </a>
       
-      
-        <a href="../mongo/" class="md-footer__link md-footer__link--next" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              MongoDB
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-          </div>
-        </a>
       
     </nav>
   
